@@ -1,0 +1,66 @@
+.contact-list-container {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    border: solid 1px black;
+    max-width: 900px;
+    min-width: 650px;
+}
+
+.contact-list-container > .table-wrapper {
+  border-spacing: 30px 0;
+}
+
+.contact-list-container > .table-wrapper > .tbody-wrapper > .row {
+    min-height: 150px;
+    max-height: 180px;
+}
+
+.contact-list-container > .table-wrapper > .tbody-wrapper > .row  > #empty-td {
+  margin-right: 30px;
+}
+
+.contact-list-container > .table-wrapper > .tbody-wrapper > .row  > .column-value {
+  margin-right: 150px;
+  min-width: 50px;
+  max-width: 100px;
+}
+
+.contact-list-container > .table-wrapper > .tbody-wrapper > .row  > .index-column-value {
+  margin-right: 150px;
+  min-width: 50px;
+  max-width: 60px;
+}
+
+.contact-list-container > .table-wrapper > .tbody-wrapper > .row  > .fName-column-value {
+  margin-right: 150px;
+  min-width: 50px;
+  max-width: 100px;
+}
+
+#fav {
+  border-radius: 5px;
+  background-color: rgb(63, 216, 63);
+}
+
+#fav:hover{
+  cursor: pointer;
+}
+
+#not-fav {
+  border-radius: 5px;
+  color: black;
+  background-color: #EFF0F1;
+}
+
+#not-fav:hover{
+  cursor: pointer;
+}
+
+#delete {
+  margin-top: 12px;
+}
+
+.contact-list-container > .table-wrapper > .tbody-wrapper > .row  > .edit-column-value:hover {
+  cursor: pointer;
+}

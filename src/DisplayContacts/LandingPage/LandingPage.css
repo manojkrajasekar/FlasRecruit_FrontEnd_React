@@ -1,0 +1,31 @@
+.landing-page-container {
+    text-align: center;
+}
+
+.landing-page-container > .page-title {
+    font-size: 25px;
+    padding: 5px;
+    max-width: 850px;
+    margin: 15px 250px 40px 290px;
+    border: 1px;
+    border-radius: 8px;
+    background-color: #EFF0F1;
+}
+
+.landing-page-container > .contact-heading-list {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    border: solid 1px black;
+    max-width: 900px;
+    min-width: 550px;
+    border-collapse: separate;
+    border-spacing: 43px 0;
+}
+
+.landing-page-container >.contact-heading-list > .column-title {
+    margin-right: 90px;
+    border: solid 1px black;
+}
+
+

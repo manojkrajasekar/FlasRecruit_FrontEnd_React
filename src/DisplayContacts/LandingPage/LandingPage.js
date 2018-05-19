@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import Contacts from '../../ContactsData/contacts.json';
-import { addContact } from '../../state/actions/contacts.action';
+import { addContact, getContact } from '../../state/actions/contacts.action';
 import ContactList from '../../DisplayContacts/ContactList';
 import AddContactForm from '../../AddContact/AddContactForm';
 import store  from '../../state/store';
@@ -11,52 +11,41 @@ class LandingPage extends Component {
     constructor(props){
         super(props);
 
-        this.state = {
-            vCount: false
-        };
+         this.state = {
+             isAddContact: false
+         };
 
-        this.addInfo = this.addInfo.bind(this);
-    }
+         
+}
 
-    componentWillMount() {
-        if(!this.state.vCount) {
-            {Contacts.map((contact) => {
-                store.dispatch(addContact(
-                        contact.firstName, 
-                        contact.lastName, 
-                        contact.email,
-                        'asasasas'
-                    ))
-            })}
-            
-            this.setState({
-                vCount: !this.state.vCount
-            })
-
-            console.log(this.state.vCount);
-        }
-
-        
-    }
-
-    updateVCount = () => {
+    updateAddContact = () => {
+        console.log('Updateing vcou');
         this.setState({
-            vCount: !this.state.vCount
+            isAddContact: true
         })
     }
 
-    addInfo = () => {
-
-        {Contacts.map((contact) => {
-            store.dispatch(addContact(
-                    contact.firstName, 
-                    contact.lastName, 
-                    contact.email,
-                    'asasasas'
-                ));
-            //count++;
-        })}
+    componentWillMount() {
+        
+        if(!this.state.vCount) {
+            {Contacts.map((contact) => {
+                        console.log('CAlling addContact');
+                    store.dispatch(addContact(
+                            contact.firstName, 
+                            contact.lastName, 
+                            contact.email,
+                            'asasasas'
+                        )).then(() => {
+                                store.dispatch(getContact())
+                            })
+                            .then(() => {
+                                this.updateAddContact()
+                            })
+                })
+            }
+        }
     }
+
     render() {
         return (
             //Renders the column with the header column values

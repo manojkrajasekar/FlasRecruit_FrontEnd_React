@@ -21,7 +21,7 @@ class ContactList extends Component {
     toggleFavorite = (contactDetail) => {
         store.dispatch(updateIsFavorite(contactDetail.contactID))
                 .then(() => {
-                store.dispatch(getContact())
+                    store.dispatch(getContact())
                 })
 
         this.setState({
